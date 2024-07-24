@@ -475,7 +475,7 @@ class _NestedReorderableListState<T> extends State<_NestedReorderableList<T>> {
     required int level,
     DragAndDropItem<T>? parent,
   }) {
-    return LongPressDraggable<Map<String, dynamic>>(
+    return Draggable<Map<String, dynamic>>(
       data: {
         'category': category,
         'index': index,
@@ -489,6 +489,7 @@ class _NestedReorderableListState<T> extends State<_NestedReorderableList<T>> {
             maxWidth: MediaQuery.of(context).size.width - level * 30.0,
           ),
           child: Material(
+            color: Colors.transparent,
             child: widget.itemBuilder(
               context,
               category,
@@ -523,6 +524,7 @@ class _NestedReorderableListState<T> extends State<_NestedReorderableList<T>> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Material(
+            color: Colors.transparent,
             child: widget.itemBuilder(
               context,
               category,
